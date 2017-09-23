@@ -1,0 +1,11 @@
+<!--suppress ALL -->
+<resources>
+    <string name="app_name">Order Admin</string>
+    <string name="textview">TextView</string>
+    <string name="title_activity_admin_function">AdminFunction</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="delete_dialog">Delete</string>
+    <string name="eilisys"> \u0040eilisys.com</string>
+</resources>
