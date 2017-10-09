@@ -6,32 +6,31 @@ package android.example.com.hungryadmin;
 
 public class AdminStructure {
 
-    private String name;
-    private String mobile;
+    private String userdetails;
+    private String email;
 
-    public AdminStructure(){
+   public AdminStructure(){
 
+   }
+
+    public AdminStructure(String userdetails, String email) {
+        this.userdetails = userdetails;
+        this.email = email;
     }
 
-    public AdminStructure(String name, String mobile) {
-        this.name = name;
-        this.mobile = mobile;
+    public String getUserdetails() {
+        return userdetails;
     }
 
-    public String getName() {
-
-        return name;
+    public void setUserdetails(String userdetails) {
+        this.userdetails = userdetails;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getEmail() {
+        return email;
     }
 
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

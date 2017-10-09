@@ -2,22 +2,22 @@ package android.example.com.hungryadmin;
 
 public class YesUserStructure {
 
-    public String name;
+    public String userdetails;
 
     public YesUserStructure(){
 
     }
 
-    public YesUserStructure(String name) {
-        this.name = name;
+    public YesUserStructure(String userdetails) {
+        this.userdetails = userdetails;
     }
 
-    public String getName() {
-        return name;
+    public String getUserdetails() {
+        return userdetails;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserdetails(String userdetails) {
+        this.userdetails = userdetails;
     }
 }
 

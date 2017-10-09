@@ -4,10 +4,14 @@
 
     <item
         android:id="@+id/yesUsers"
-        android:title="Yes Order Users" />
+        android:title="USERS DAILY STATUS" />
 
     <item
         android:id="@+id/allUsers"
-        android:title="Registered Users" />
+        android:title="REGISTERED USERS" />
+
+    <item
+        android:id="@+id/orderAsAdmin"
+        android:title="ORDER AS USER"/>
 
 </menu>

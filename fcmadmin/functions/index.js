@@ -4,6 +4,7 @@ var topic = "orders";
 
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+const MAX_LOG_COUNT = 1;
 
 admin.initializeApp(functions.config().firebase);
 
@@ -19,11 +20,11 @@ exports.updateOrder = functions.database.ref('/ORDER/CurrentOrder').onWrite(even
 			
 				const payload = {
 				notification: {
-				title: "Today's order is updated",
+				title: "TODAY'S ORDER IS UPDATED!",
 				body: "Click here to save your preference",
-				icon: "ic_launcher_round",
+				icon: "R.drawable.finaluser",
 				sound: "default",
-				color: "#2c438d",
+				color: "#12397a",
 				priority: "high"
 			}
 			
@@ -33,5 +34,24 @@ exports.updateOrder = functions.database.ref('/ORDER/CurrentOrder').onWrite(even
 			});
 			
 		});
+		
+	/*
+	exports.truncate = functions.database.ref('/ADMIN/{uid}').onWrite(event => {
+		const parentRef = event.data.ref.parent;
+		return parentRef.once('value').then(snapshot => {
+		if (snapshot.numChildren() >= MAX_LOG_COUNT) {
+		let childCount = 0;
+		const updates = {};
+      snapshot.forEach(function(child) {
+        if (++childCount <= snapshot.numChildren() - MAX_LOG_COUNT) {
+          updates[child.key] = null;
+        }
+      });
+      // Update the parent. This effectively removes the extra children.
+      return parentRef.update(updates);
+    }
+  });
+});
+*/
 });
 

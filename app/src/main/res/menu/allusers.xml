@@ -8,6 +8,6 @@
 
     <item
         android:id="@+id/allUsers"
-        android:title="Return to mai" />
+        android:title="Main Page" />
 
 </menu>

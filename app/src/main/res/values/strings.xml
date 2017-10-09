@@ -1,6 +1,6 @@
 <!--suppress ALL -->
 <resources>
-    <string name="app_name">Order Admin</string>
+    <string name="app_name">Maggi ADMIN</string>
     <string name="textview">TextView</string>
     <string name="title_activity_admin_function">AdminFunction</string>
     <string name="action_settings">Settings</string>

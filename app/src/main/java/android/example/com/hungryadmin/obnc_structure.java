@@ -1,18 +1,20 @@
 package android.example.com.hungryadmin;
 
 /**
- * Created by Aakash on 11-09-2017.
+ * Created by Aakash on 06-10-2017.
  */
 
-public class UserStructure {
+public class obnc_structure {
 
-public String userdetails;
+    public String userdetails;
 
-    public UserStructure(){
+
+    public obnc_structure()
+    {
 
     }
 
-    public UserStructure(String userdetails) {
+    public obnc_structure(String userdetails) {
         this.userdetails = userdetails;
     }
 

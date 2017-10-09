@@ -22,6 +22,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import static android.R.attr.key;
@@ -56,21 +57,20 @@ public class UsersActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
+        Query query1=userDatabase.orderByChild("userdetails");
         FirebaseRecyclerAdapter<UserStructure, UsersViewHolder> firebaseRecyclerAdapter =
                 new FirebaseRecyclerAdapter<UserStructure, UsersViewHolder>(
 
                         UserStructure.class,
                         R.layout.user_single_layout,
                         UsersViewHolder.class,
-                        userDatabase
+                        query1
 
                 ) {
                     @Override
                     protected void populateViewHolder(final UsersViewHolder usersViewHolder, final UserStructure userStructure, int position) {
 
-                        usersViewHolder.setName(userStructure.getName());
-                        usersViewHolder.setMobile(userStructure.getMobile());
+                        usersViewHolder.setName(userStructure.getUserdetails());
 
                         final String key = getRef(position).getKey();
                         usersViewHolder.mView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -103,12 +103,6 @@ public class UsersActivity extends AppCompatActivity {
             userNameView.setText(name);
         }
 
-        public void setMobile(String mobile) {
-
-            TextView userMobileView = (TextView) mView.findViewById(R.id.user_single_mobile);
-            userMobileView.setText(mobile);
-        }
-
     }
 
     private void showDeleteDialog(final String key) {
@@ -136,7 +130,7 @@ public class UsersActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
 
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        getMenuInflater().inflate(R.menu.allusers, menu);
 
         return true;
     }
@@ -148,16 +142,17 @@ public class UsersActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.yesUsers:
-                Intent todayUsersintent = new Intent(UsersActivity.this, YesUsersActivity.class);
-                startActivity(todayUsersintent);
+                Intent yes = new Intent(UsersActivity.this, YesUsersActivity.class);
+                startActivity(yes);
                 finish();
                 break;
 
             case R.id.allUsers:
-                Intent allUsersintent = new Intent(UsersActivity.this, UsersActivity.class);
-                startActivity(allUsersintent);
+                Intent all = new Intent(UsersActivity.this, AdminUpdatesOrder.class);
+                startActivity(all);
                 finish();
                 break;
+
         }
         return true;
     }
